@@ -1,4 +1,5 @@
-#root {
+.root-block {
+    overflow-x: hidden;
     .site-header {
         width: 100%;
         display: flex;
@@ -6,18 +7,63 @@
         position: relative;
         justify-content: center;
         border-bottom: 1px solid #15151566;
+        height: 50px;
         .logo {
             width: 100px;
             height: 100px;
             cursor: pointer;
             position: absolute;
             left: 0px;
+            z-index: 1000;
+        }
+        .burger {
+            width: 10px;
+            height: 10px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            gap: 7px;
+            z-index: 1000;
+            position: absolute;
+            right: 15px;
+            transition: all .3s ease-in-out;
+            &.active {
+                transform: rotate(90deg);
+            }
+            cursor: pointer;
+            span {
+                line-height: 0;
+                font-weight: 10;
+                font-size: 30px;
+                margin: 0;
+            }
         }
         .header-list {
             display: flex;
             justify-content: center;
             justify-self: center;
+            overflow-x: hidden;
             $width: 140px;
+            &.burger-menu {
+                &.menu-hide {
+                    top: -20px;
+                }
+                &.menu-show {
+                    display: flex;
+                    top: -120vh;
+                }
+                overflow-x: hidden;
+                transition: all .3s ease-in-out;
+                position: absolute;
+                top: -120vh;
+                width: 130vh;
+                height: 110vh;
+                background-color: wheat;
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
             a {
                 height: 40px;
                 width: $width;

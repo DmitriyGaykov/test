@@ -1,25 +1,27 @@
 @import url('wave.css');
-#root {
+.root-block {
     .site-footer {
         width: 100%;
         display: flex;
         justify-content: space-between;
+        gap: 10px;
         align-items: center;
         flex-wrap: wrap;
         padding: 10px;
         border-top: 1px solid #15151566;
         .footer-block {
-            max-width: 30%;
+            max-width: 300px;
             width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            gap: 10px;
+            gap: 6px;
             padding: 10px 6px;
             box-sizing: border-box;
             .footer-element {
                 display: flex;
-                width: 200px;
+                max-width: 250px;
+                width: 100%;
                 align-items: center;
                 gap: 10px;
                 img {
@@ -34,6 +36,10 @@
                     }
                 }
             }
+        }
+        @media (max-width: 520px) {
+            gap: 15px;
+            flex-direction: column;
         }
     }
 }

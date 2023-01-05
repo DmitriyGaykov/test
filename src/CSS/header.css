@@ -1,24 +1,72 @@
-#root .site-header {
+.root-block {
+  overflow-x: hidden;
+}
+.root-block .site-header {
   width: 100%;
   display: flex;
   align-items: center;
   position: relative;
   justify-content: center;
   border-bottom: 1px solid rgba(21, 21, 21, 0.4);
+  height: 50px;
 }
-#root .site-header .logo {
+.root-block .site-header .logo {
   width: 100px;
   height: 100px;
   cursor: pointer;
   position: absolute;
   left: 0px;
+  z-index: 1000;
 }
-#root .site-header .header-list {
+.root-block .site-header .burger {
+  width: 10px;
+  height: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+  z-index: 1000;
+  position: absolute;
+  right: 15px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.root-block .site-header .burger.active {
+  transform: rotate(90deg);
+}
+.root-block .site-header .burger span {
+  line-height: 0;
+  font-weight: 10;
+  font-size: 30px;
+  margin: 0;
+}
+.root-block .site-header .header-list {
   display: flex;
   justify-content: center;
   justify-self: center;
+  overflow-x: hidden;
 }
-#root .site-header .header-list a {
+.root-block .site-header .header-list.burger-menu {
+  overflow-x: hidden;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  top: -120vh;
+  width: 130vh;
+  height: 110vh;
+  background-color: wheat;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+.root-block .site-header .header-list.burger-menu.menu-hide {
+  top: -20px;
+}
+.root-block .site-header .header-list.burger-menu.menu-show {
+  display: flex;
+  top: -120vh;
+}
+.root-block .site-header .header-list a {
   height: 40px;
   width: 140px;
   display: flex;
@@ -27,21 +75,21 @@
   transition: all 0.2s ease-in;
   position: relative;
 }
-#root .site-header .header-list a li {
+.root-block .site-header .header-list a li {
   display: flex;
   align-items: center;
 }
-#root .site-header .header-list a .icon {
+.root-block .site-header .header-list a .icon {
   width: 22px;
   display: flex;
   align-items: center;
 }
-#root .site-header .header-list a .icon img {
+.root-block .site-header .header-list a .icon img {
   width: 16px;
   height: 16px;
   transition: all 0.8s ease-in-out;
 }
-#root .site-header .header-list a::after {
+.root-block .site-header .header-list a::after {
   content: "";
   transition: all 0.3s ease-in;
   position: absolute;
@@ -51,9 +99,9 @@
   border-bottom: 1px solid black;
   transform: rotateY(90deg);
 }
-#root .site-header .header-list a:hover::after {
+.root-block .site-header .header-list a:hover::after {
   transform: rotateY(0deg);
 }
-#root .site-header .header-list a:hover .icon img {
+.root-block .site-header .header-list a:hover .icon img {
   transform: rotate(360deg);
 }
